@@ -131,31 +131,17 @@ std::vector<std::string> SoapyFobosSDR::listAntennas(const int direction, const 
     return antennas;
 }
 
-void SoapyFobosSDR::setAntenna(const int direction, const size_t channel, const std::string &name)
+void SoapyFobosSDR::setAntenna( const int direction, const size_t channel, const std::string &name )
 {
-#ifdef SOAPY_FOBOS_PRINT_DEBUG  
-    printf(">>> %s::%s(%d, %d, %s)\n", __CLASS__, __FUNCTION__, direction, (int)channel, name.c_str());
-#endif   
-    if ((direction == SOAPY_SDR_RX) && (channel == 0) && (name == "RX"))
-    {
-    }
-    else
-    {
-        throw std::runtime_error("setAntena() not supported");
-    }
+        /* TODO delete this function or throw if name != RX... */
 }
 
-std::string SoapyFobosSDR::getAntenna(const int direction, const size_t channel) const
+
+std::string SoapyFobosSDR::getAntenna( const int direction, const size_t channel ) const
 {
-#ifdef SOAPY_FOBOS_PRINT_DEBUG  
-    printf(">>> %s::%s(%d, %d)\n", __CLASS__, __FUNCTION__, direction, (int)channel);
-#endif   
-    if ((direction == SOAPY_SDR_RX) && (channel == 0))
-    {
-        return "RX";
-    }    
-    return "";
+        return("RX");
 }
+
 
 /*******************************************************************
  * Frontend corrections API
