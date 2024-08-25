@@ -193,10 +193,10 @@ int SoapyFobosSDR::activateStream(
 #ifdef SOAPY_FOBOS_PRINT_DEBUG  
     printf(">>> %s::%s(%d, %lld, %d)\n", __CLASS__, __FUNCTION__, flags, timeNs, (int)numElems);
 #endif     
-    if (flags != 0)
-    {
-        return SOAPY_SDR_NOT_SUPPORTED;
-    }
+    //if (flags != 0)
+    //{
+    //    return SOAPY_SDR_NOT_SUPPORTED;
+    //}
     _rx_idx_w = 0;
     _rx_pos_r = 0;
     _rx_idx_r = 0;
@@ -220,10 +220,10 @@ int SoapyFobosSDR::deactivateStream(SoapySDR::Stream *stream, const int flags, c
 #ifdef SOAPY_FOBOS_PRINT_DEBUG  
     printf(">>> %s::%s(%d, %lld)\n", __CLASS__, __FUNCTION__, flags, timeNs);
 #endif     
-    if (flags != 0)
-    {
-        return SOAPY_SDR_NOT_SUPPORTED;
-    }
+    //if (flags != 0)
+    //{
+    //    return SOAPY_SDR_NOT_SUPPORTED;
+    //}
     if (_rx_async_thread.joinable())
     {
         fobos_rx_cancel_async(_dev);
@@ -244,10 +244,10 @@ int SoapyFobosSDR::readStream(
     (void)timeNs;
     (void)timeoutUs;
 
-    if (flags != 0)
-    {
-        return SOAPY_SDR_NOT_SUPPORTED;
-    }
+    //if (flags != 0)
+    //{
+    //    return SOAPY_SDR_NOT_SUPPORTED;
+    //}
     if (!_running)
     {
 #ifdef SOAPY_FOBOS_PRINT_DEBUG        
